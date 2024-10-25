@@ -1,52 +1,67 @@
-IPSet Manager with Web Interface and HTTPS Support
+# IPSet Manager with Web Interface and HTTPS Support
 
 This project provides a web-based IPSet Manager application built with Flask, Dockerized for ease of deployment, and secured with HTTPS using Caddy as a reverse proxy. The application allows you to view, add, delete, flush, save, and restore IPSet entries through a user-friendly web interface with authentication.
 
-Table of Contents
-Features
-Prerequisites
-Directory Structure
-Getting Started
-Clone the Repository
-Set Up the Environment
-Generate a Hashed Password
-Configure the Application
-Docker Configuration
-Dockerfile
-Docker Compose
-Caddy Configuration
-Running the Application
-Accessing the Web Interface
-Usage
-View IPSet Entries
-Add Entry
-Delete Entry
-Flush IPSet List
-Save IPSet Configuration
-Restore IPSet Configuration
-Security Considerations
-Troubleshooting
-License
-Features
-Web-Based Interface: Manage IPSet entries through a user-friendly web interface.
-Authentication: Secure access with HTTP Basic Authentication.
-HTTPS Support: Traffic is encrypted using HTTPS provided by Caddy and Let's Encrypt.
-IPSet Operations:
-View existing IPSet entries.
-Add new entries to IPSet lists.
-Delete individual entries.
-Flush entire IPSet lists.
-Save and download the current IPSet configuration.
-Restore IPSet configuration from a file.
-Prerequisites
-Docker and Docker Compose installed on your system.
-Domain Name: A domain name pointing to your server's IP address (e.g., ipset.example.com).
-Open Ports:
-Port 443: Must be open and accessible for HTTPS connections.
-Host Considerations:
-Port 80: If port 80 is occupied (e.g., by Apache), the configuration uses the TLS-ALPN-01 challenge to obtain SSL certificates without needing port 80.
-Directory Structure
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Directory Structure](#directory-structure)
+- [Getting Started](#getting-started)
+  - [Clone the Repository](#clone-the-repository)
+  - [Set Up the Environment](#set-up-the-environment)
+  - [Generate a Hashed Password](#generate-a-hashed-password)
+  - [Configure the Application](#configure-the-application)
+- [Docker Configuration](#docker-configuration)
+  - [Dockerfile](#dockerfile)
+  - [Docker Compose](#docker-compose)
+  - [Caddy Configuration](#caddy-configuration)
+- [Running the Application](#running-the-application)
+- [Accessing the Web Interface](#accessing-the-web-interface)
+- [Usage](#usage)
+  - [View IPSet Entries](#view-ipset-entries)
+  - [Add Entry](#add-entry)
+  - [Delete Entry](#delete-entry)
+  - [Flush IPSet List](#flush-ipset-list)
+  - [Save IPSet Configuration](#save-ipset-configuration)
+  - [Restore IPSet Configuration](#restore-ipset-configuration)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## Features
+
+- **Web-Based Interface**: Manage IPSet entries through a user-friendly web interface.
+- **Authentication**: Secure access with HTTP Basic Authentication.
+- **HTTPS Support**: Traffic is encrypted using HTTPS provided by Caddy and Let's Encrypt.
+- **IPSet Operations**:
+  - View existing IPSet entries.
+  - Add new entries to IPSet lists.
+  - Delete individual entries.
+  - Flush entire IPSet lists.
+  - Save and download the current IPSet configuration.
+  - Restore IPSet configuration from a file.
+
+---
+
+## Prerequisites
+
+- **Docker** and **Docker Compose** installed on your system.
+- **Domain Name**: A domain name pointing to your server's IP address (e.g., `ipset.example.com`).
+- **Open Ports**:
+  - **Port 443**: Must be open and accessible for HTTPS connections.
+- **Host Considerations**:
+  - **Port 80**: If port 80 is occupied (e.g., by Apache), the configuration uses the TLS-ALPN-01 challenge to obtain SSL certificates without needing port 80.
+
+---
+
+## Directory Structure
+
 Your project directory should have the following structure:
+
 
 
 ipset-manager/
