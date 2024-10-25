@@ -60,19 +60,20 @@ This project provides a web-based IPSet Manager application built with Flask, Do
 
 ## Directory Structure
 
-Your project directory should have the following structure:
 
+- Your project directory should have the following structure:
 
+- ipset-manager/
+- ├── Dockerfile
+- ├── docker-compose.yml
+- ├── Caddyfile
+- ├── requirements.txt
+- ├── ipset_manager.py
+- └── README.md
 
-ipset-manager/
-├── Dockerfile
-├── docker-compose.yml
-├── Caddyfile
-├── requirements.txt
-├── ipset_manager.py
-└── README.md
-Getting Started
-Clone the Repository
+## Getting Started
+- Clone the Repository
+
 Clone this repository to your local machine:
 
 git clone https://github.com/cheirekov/ipset_web_manager.git
