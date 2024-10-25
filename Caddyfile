@@ -1,0 +1,10 @@
+{
+    http_port 8002
+}
+some.domain.that.you.own {
+    tls {
+        alpn http/1.1
+    }
+    reverse_proxy host.docker.internal:3300
+}
+

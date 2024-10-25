@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  ipset:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ipset
+    cap_add:
+      - NET_ADMIN
+    network_mode: host
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - ipset
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  caddy_data:
+  caddy_config:
+
